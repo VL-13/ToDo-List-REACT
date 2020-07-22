@@ -1,0 +1,199 @@
+:root {
+  --white-color: #effffb;
+  --blue-color: #4f98ca;
+  --green-color: #21bf73;
+  --red-color: #fd5e53;
+  --black-color: #272727;
+}
+
+
+body {
+  color: var(--black-color);
+  font-family: 'Manrope', sans-serif;
+  margin:0;
+  padding:5%;
+}
+
+.container {
+  margin: 0 auto;
+  width: 600px;
+  font-weight: bold;
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  padding:20px;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  margin:0;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.todo-component {
+  display: flex;
+  flex-flow: column;
+  width: 90%;
+  padding: 0 20px;
+}
+
+.todo-component__control {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.todo-component__control input {
+  height: 32px;
+  width: 100%;
+  border: 3px solid var(--blue-color);;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 20px;
+  line-height: normal;
+  padding: 6px;
+}
+
+.todo-component__control input:hover {
+  background: rgb(228, 237, 245);
+}
+
+.todo-component__control button {
+  
+  background-color: var(--blue-color);
+  color: var(--white-color);
+  border: 1.5px solid var(--blue-color);
+  cursor: pointer;
+  transition: 0.5s;
+  text-align: center;
+  font-size: 35px;
+  height: 50px;
+  width: 65px;
+  cursor: pointer;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+}
+
+.todo-component__control button:hover {
+  color: var(--blue-color);
+  background-color: var(--white-color);
+  border: 1.5px solid var(--blue-color);
+}
+
+.todolist {
+  width: 100%;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.todolist__item {
+  display: flex;
+  width: 100%;
+  height: 40px;
+  background-color: #f1f3f4;
+  border: 1px solid grey;
+  border-radius: 5px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  transition: 0.2s;
+}
+
+.todolist__item:hover {
+  background: rgb(185, 228, 255);
+}
+
+.todolist__item input[type='checkbox'] {
+  margin: 0 5px;
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--red-color);
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+}
+
+.todolist__item button:hover {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.todolist__item span {
+  width: 100%;
+  word-break: break-all;
+}
+
+.complete {
+  border: 3px solid var(--green-color);
+}
+
+.complete.todolist__item span {
+  text-decoration: line-through;
+}
+
+.todo-component__input-group {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  padding: 0 10px;
+}
+
+#input-count, #total, #total-done {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+      margin: 0 auto;
+      width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+      margin: 0 auto;
+      width: 90%;
+  }
+  .todolist__item {
+      height: 30px;
+  }
+  
+}
+
+/*---Backgroung effect---*/ 
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #46d680 50%, #408ad3 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
